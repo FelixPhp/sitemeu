@@ -3,29 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Life Developer</title>
+    <title>Empresa</title>
+    <link rel="stylesheet" href="css/stylehome.css">
+    <script defer src="js/scripts.js"></script>
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Meu Site</h1>
+        <img src="imagens/logo50x50.png" alt="Logo" class="logo" onclick="voltarHome()">
+        <nav>
+            <a href="#" onclick="voltarHome()">Home</a>
+            <a href="#" onclick="mostrarQuemSomos()">Quem Somos</a>
+            <a href="#" onclick="baixarProgramas()">Download</a>
+            <a href="#" onclick="irParaAreaCliente()">Área do Cliente</a>
+        </nav>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-
-    <section>
-        <h2>Sobre Nós</h2>
-        <p>Este é um site de exemplo criado com HTML.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+    <div class="content" id="content">
+        <h1>Bem-vindo ao nosso site</h1>
+    </div>
 </body>
 </html>
-l
