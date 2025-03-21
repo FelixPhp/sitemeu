@@ -1,12 +1,9 @@
-function voltarHome() {
-    document.getElementById('content').innerHTML = '<h1>Bem-vindo ao nosso site</h1>';
-}
-function mostrarQuemSomos() {
-    document.getElementById('content').innerHTML = '<h1>Quem Somos</h1><p>Somos uma empresa dedicada a fornecer soluções inovadoras para nossos clientes.</p>';
-}
-function baixarProgramas() {
-    window.location.href = 'download.html';
-}
-function irParaAreaCliente() {
-    window.location.href = 'area_cliente.html';
-}
+let index = 0;
+        function showNextImage() {
+            const images = document.querySelectorAll('.carousel img');
+            images.forEach((img, i) => {
+                img.style.transform = `translateX(-${index * 100}%)`;
+            });
+            index = (index + 1) % images.length;
+        }
+        setInterval(showNextImage, 3000);
