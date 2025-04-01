@@ -68,7 +68,7 @@ form{ width: 100%; }
     .input-box input{
         width: 100%;
         padding: 13px 50px 13px 20px;
-        background: #eee;
+        background: #f5f4f4;
         border-radius: 8px;
         border: none;
         outline: none;
@@ -93,7 +93,7 @@ form{ width: 100%; }
 .forgot-link{ margin: -15px 0 15px; }
     .forgot-link a{
         font-size: 14.5px;
-        color: #333;
+        color: #fafafa;
     }
 
 .btn{
@@ -136,7 +136,7 @@ form{ width: 100%; }
         left: -250%;
         width: 300%;
         height: 100%;
-        background: #7494ec;
+        background: #111111;
         /* border: 2px solid red; */
         border-radius: 150px;
         z-index: 2;
