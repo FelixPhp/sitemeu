@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartão de Visita - Felix Pessoa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    .card {
+      width: 800px;
+      background: white;
+      border: 1px solid #ccc;
+      margin: 50px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+    }
+
+    .left {
+      color: #1d4ed8;
+    }
+
+    .left h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .left p {
+      font-size: 16px;
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .right {
+      border: 2px solid #1d4ed8;
+      border-radius: 12px;
+      padding: 15px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      color: #1d4ed8;
+    }
+
+    .contact-item i {
+      margin-right: 10px;
+    }
+
+    .bottom {
+      background-color: #0a2f73;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px 30px;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    @media screen and (max-width: 820px) {
+      .card {
+        width: 95%;
+      }
+
+      .top {
+        flex-direction: column;
+      }
+
+      .right {
+        margin-top: 20px;
+      }
+
+      .bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo img {
+        margin: 0 auto 15px;
+      }
+    }
+  </style>
+
+  <!-- Ícones via CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="card">
+  <div class="top">
+    <div class="left">
+      <h1>FELIX PESSOA</h1>
+      <p><strong>Assistente de Infraestrutura & Suporte</strong><br>
+        Núcleo de TI</p>
+    </div>
+    <div class="right">
+      <div class="contact-item"><i class="fas fa-phone-alt"></i> (65) 3318-9800</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> felix.npd@uniselva.org.br</div>
+      <div class="contact-item"><i class="fas fa-globe"></i> fundacaouniselva.org.br</div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/pt/0/06/Uniselva_logo.png" alt="Logo Uniselva">
+    </div>
+    <div class="footer-text">
+      Fundação de Apoio e Desenvolvimento da Universidade Federal de Mato Grosso (UFMT).<br>
+      Credenciada como fundação de apoio ao Instituto Federal de Mato Grosso (IFMT), à Universidade Federal de Rondonópolis (UFR), ao Instituto Federal de Mato Grosso do Sul (IFMS) e à Universidade Federal de São João del-Rei (UFSJ).
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
