@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventário TI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    input, button {
+      padding: 0.5rem;
+      margin: 0.25rem;
+    }
+    .actions button {
+      margin-right: 5px;
+    }
+    .form-inline input {
+      width: 20%;
+    }
+    .login-button {
+      margin-bottom: 1rem;
+    }
+    .login-button button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .login-button button:hover {
+      background-color: #1c6690;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inventário de Equipamentos de TI</h1>
+  </header>
+  <div class="container">
+    <!-- Botão para login externo -->
+    <div class="login-button">
+      <button onclick="window.location.href=''">Area do Cliente</button>
+    </div>
+
+    <!-- App -->
+    <div class="main-app" id="mainApp">
+      <h2>Equipamentos</h2>
+      <div class="form-inline">
+        <input type="text" id="itemNome" placeholder="Nome do equipamento" />
+        <input type="text" id="itemTipo" placeholder="Tipo" />
+        <input type="text" id="itemLocal" placeholder="Localização" />
+        <input type="text" id="itemPatrimonio" placeholder="Patrimônio" />
+        <button onclick="adicionarItem()">Adicionar</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Localização</th>
+            <th>Patrimônio</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaEquipamentos"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let equipamentos = JSON.parse(localStorage.getItem("equipamentosTI")) || [];
+
+    function salvarEquipamentos() {
+      localStorage.setItem("equipamentosTI", JSON.stringify(equipamentos));
+    }
+
+    function carregarEquipamentos() {
+      const tabela = document.getElementById("tabelaEquipamentos");
+      tabela.innerHTML = "";
+      equipamentos.forEach((item, index) => {
+        tabela.innerHTML += `
+          <tr>
+            <td><input value="${item.nome}" onchange="editarCampo(${index}, 'nome', this.value)"></td>
+            <td><input value="${item.tipo}" onchange="editarCampo(${index}, 'tipo', this.value)"></td>
+            <td><input value="${item.local}" onchange="editarCampo(${index}, 'local', this.value)"></td>
+            <td><input value="${item.patrimonio}" onchange="editarCampo(${index}, 'patrimonio', this.value)"></td>
+            <td class="actions">
+              <button onclick="removerItem(${index})">Excluir</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function adicionarItem() {
+      const nome = document.getElementById("itemNome").value;
+      const tipo = document.getElementById("itemTipo").value;
+      const local = document.getElementById("itemLocal").value;
+      const patrimonio = document.getElementById("itemPatrimonio").value;
+      if (nome && tipo && local && patrimonio) {
+        equipamentos.push({ nome, tipo, local, patrimonio });
+        salvarEquipamentos();
+        carregarEquipamentos();
+        document.getElementById("itemNome").value = "";
+        document.getElementById("itemTipo").value = "";
+        document.getElementById("itemLocal").value = "";
+        document.getElementById("itemPatrimonio").value = "";
+      } else {
+        alert("Preencha todos os campos.");
+      }
+    }
+
+    function removerItem(index) {
+      if (confirm("Deseja realmente excluir este item?")) {
+        equipamentos.splice(index, 1);
+        salvarEquipamentos();
+        carregarEquipamentos();
+      }
+    }
+
+    function editarCampo(index, campo, valor) {
+      equipamentos[index][campo] = valor;
+      salvarEquipamentos();
+    }
+
+    carregarEquipamentos();
+  </script>
+</body>
+</html>
