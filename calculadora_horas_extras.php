@@ -20,7 +20,7 @@ function calcularDiferencaHoras($entrada, $saida) {
     <title>Calculadora de Horas Extras</title>
     <style>
         body {
-            margin: 0;
+            margin: 10;
             padding: 0;
             background-color: #000;
             font-family: Arial, sans-serif;
