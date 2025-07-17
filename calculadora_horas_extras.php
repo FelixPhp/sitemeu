@@ -107,7 +107,7 @@ function calcularValorHoraExtra($salario, $cargaHorariaMensal, $horasExtras, $pe
       <div class="grid">
         <div class="form-group">
           <label>Salário bruto</label>
-          <input type="number" name="salario" step="0.01" placeholder="Ex: 3600" required>
+          <input type="number" name="salario" step="0.010,00" placeholder="Ex: 3600" required>
           <small>Salário registrado na carteira (sem descontos).</small>
         </div>
 
