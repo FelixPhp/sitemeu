@@ -18,6 +18,64 @@ function calcularDiferencaHoras($entrada, $saida) {
 <head>
     <meta charset="UTF-8">
     <title>Calculadora de Horas Extras</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2, h3 {
+            text-align: center;
+            color: #00ff99;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 10px;
+        }
+        input, select {
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+        button {
+            background-color: #00ff99;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #00cc77;
+        }
+        .resultado {
+            margin-top: 20px;
+            background-color: #111;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+
 </head>
 <body>
     <h2>Calculadora de Horas Extras</h2>
