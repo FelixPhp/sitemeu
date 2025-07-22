@@ -18,7 +18,7 @@ function calcularValorHoraExtra($salario, $cargaHorariaMensal, $horasExtras, $pe
   <title>Calculadora de Hora Extra</title>
   <style>
     body {
-      background-color: #f7f7f7;
+      background-color: #0c0c0cff;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
