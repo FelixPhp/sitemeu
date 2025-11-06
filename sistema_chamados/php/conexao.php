@@ -1,9 +1,9 @@
 
 <?php
 $host = 'localhost';
-$db   = 'sistema_chamados';
-$user = 'root';
-$pass = '';
+$db   = 'chamados';
+$user = 'u209199010_felixadmin';
+$pass = 'Funi.2013@';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
