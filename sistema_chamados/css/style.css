@@ -1,0 +1,31 @@
+
+/* Layout base 1028x720 com exterior azul-marinho */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: "Segoe UI", Arial, sans-serif;}
+body{background:#0b1c3c;color:#222;display:flex;align-items:center;justify-content:center}
+.container-app{width:1028px;height:720px;background:#fff;border-radius:12px;overflow:hidden;display:flex;box-shadow:0 10px 35px rgba(0,0,0,.35)}
+.sidebar{width:260px;background:#0e244d;color:#fff;padding:16px;display:flex;flex-direction:column}
+.sidebar h4{margin:8px 0 16px;font-weight:600}
+.sidebar a{display:block;color:#d7e2ff;text-decoration:none;padding:10px 12px;border-radius:8px;margin-bottom:8px}
+.sidebar a.active,.sidebar a:hover{background:#193368;color:#fff}
+.header{height:56px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#fff;position:sticky;top:0;z-index:10}
+.main{flex:1;background:#f7f8fc;display:flex;flex-direction:column}
+.content{padding:16px;overflow:auto;height:calc(100% - 56px)}
+.btn{border-radius:10px}
+.status-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:.82rem;font-weight:600}
+.status-aberto{background:#ffe5e5;color:#b70000}
+.status-atendimento{background:#fff2df;color:#9a5a00}
+.status-finalizado{background:#e7ffe9;color:#0b6b28}
+.card{border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,.06);border:none}
+.table thead th{position:sticky;top:0;background:#fff;z-index:1}
+.form-termo{height:140px;overflow:auto;border:1px solid #e5e7eb;border-radius:10px;padding:12px;background:#fafafa}
+/* Login container */
+.auth-wrapper{width:1028px;height:720px;background:#fff;border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;box-shadow:0 10px 35px rgba(0,0,0,.35)}
+.auth-side{background:#0b1c3c;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:48px}
+.auth-side h1{font-weight:800;letter-spacing:.3px;margin-bottom:12px}
+.auth-side p{opacity:.9}
+.auth-main{padding:40px;display:flex;align-items:center;justify-content:center}
+.small{font-size:.9rem;color:#6b7280}
+@media (max-width: 1200px){
+  body{align-items:flex-start}
+}
