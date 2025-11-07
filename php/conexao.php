@@ -1,7 +1,7 @@
 
 <?php
 $host = 'localhost';
-$db   = 'chamados';
+$db   = 'u209199010_chamados';
 $user = 'u209199010_felixadmin';
 $pass = 'Funi.2013@';
 $charset = 'utf8mb4';
