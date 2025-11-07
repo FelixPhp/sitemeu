@@ -1,10 +1,10 @@
 
-<?php require __DIR__.'/php/auth.php'; require_admin(); require __DIR__.'php/conexao.php'; ?>
+<?php require __DIR__.'/php/auth.php'; require_admin(); require __DIR__.'/php/conexao.php'; ?>
 <!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Responder Chamado</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head><body>
 <?php
   $id = (int)($_GET['id'] ?? 0);
@@ -14,9 +14,9 @@
   if(!$chamado){ echo '<div class="p-3 text-white">Chamado não encontrado.</div>'; exit; }
 ?>
 <div class="container-app">
-  <?php include __DIR__.'php/sidebar_admin.php'; ?>
+  <?php include __DIR__.'/php/sidebar_admin.php'; ?>
   <div class="main">
-    <?php include __DIR__.'php/header.php'; ?>
+    <?php include __DIR__.'/php/header.php'; ?>
     <div class="content">
       <h4 class="mb-3">Responder Chamado • <?php echo htmlspecialchars($chamado['numero_os']); ?></h4>
       <div class="card p-3 mb-3">
@@ -26,7 +26,7 @@
         <div><strong>Status atual:</strong> <?php echo htmlspecialchars($chamado['status']); ?></div>
       </div>
       <div class="card p-3">
-        <form method="post" action="php/chamados.php">
+        <form method="post" action="/php/chamados.php">
           <input type="hidden" name="action" value="responder">
           <input type="hidden" name="id" value="<?php echo $chamado['id']; ?>">
           <div class="mb-3">
@@ -53,12 +53,12 @@
           </div>
           <div class="mt-3 d-flex gap-2">
             <button class="btn btn-primary">Salvar</button>
-            <a href="dashboard_tecnico.php" class="btn btn-outline-secondary">Voltar</a>
+            <a href="/dashboard_tecnico.php" class="btn btn-outline-secondary">Voltar</a>
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 </body></html>

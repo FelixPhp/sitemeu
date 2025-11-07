@@ -1,15 +1,15 @@
 
-<?php require __DIR__.'/php/auth.php'; require_login(); require __DIR__.'php/conexao.php'; ?>
+<?php require __DIR__.'/php/auth.php'; require_login(); require __DIR__.'/php/conexao.php'; ?>
 <!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agendar Sala</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head><body>
 <div class="container-app">
-  <?php include __DIR__.'php/sidebar_user.php'; ?>
+  <?php include __DIR__.'/php/sidebar_user.php'; ?>
   <div class="main">
-    <?php include __DIR__.'php/header.php'; ?>
+    <?php include __DIR__.'/php/header.php'; ?>
     <div class="content">
       <h4 class="mb-3">Agendamento de Sala (8h–18h)</h4>
       <?php if(isset($_GET['ok'])): ?><div class="alert alert-success">Reserva enviada!</div><?php endif; ?>

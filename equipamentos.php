@@ -7,14 +7,14 @@
 <link rel="stylesheet" href="/css/style.css">
 </head><body>
 <div class="container-app">
-  <?php include __DIR__.'php/sidebar_user.php'; ?>
+  <?php include __DIR__.'/php/sidebar_user.php'; ?>
   <div class="main">
-    <?php include __DIR__.'php/header.php'; ?>
+    <?php include __DIR__.'/php/header.php'; ?>
     <div class="content">
       <h4 class="mb-3">Solicitação de Equipamento</h4>
       <?php if(isset($_GET['ok'])): ?><div class="alert alert-success">Solicitação enviada!</div><?php endif; ?>
       <div class="card p-3">
-        <form method="post" action="php/equipamentos.php" onsubmit="
+        <form method="post" action="/php/equipamentos.php" onsubmit="
           if(!document.getElementById('termo').checked){ alert('Você precisa aceitar o termo.'); return false; }
         ">
           <input type="hidden" name="action" value="criar">
@@ -46,5 +46,5 @@
     </div>
   </div>
 </div>
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 </body></html>

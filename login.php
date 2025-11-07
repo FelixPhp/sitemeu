@@ -1,5 +1,5 @@
 
-<?php session_start(); if(isset($_SESSION['user'])){ header("Location: router.php"); exit; } ?>
+<?php session_start(); if(isset($_SESSION['user'])){ header("Location: /router.php"); exit; } ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,15 +20,15 @@
         <h3 class="mb-3">Entrar</h3>
         <?php if(isset($_GET['ok'])): ?><div class="alert alert-success">Cadastro realizado! Faça o login.</div><?php endif; ?>
         <?php if(isset($_GET['e'])): ?><div class="alert alert-danger">Credenciais inválidas.</div><?php endif; ?>
-        <form action="php/login.php" method="post" class="mb-3">
+        <form action="/php/login.php" method="post" class="mb-3">
           <div class="mb-2"><label class="form-label">Email</label><input name="email" type="email" class="form-control" required></div>
           <div class="mb-3"><label class="form-label">Senha</label><input name="senha" type="password" class="form-control" required></div>
           <button class="btn btn-primary w-100">Entrar</button>
         </form>
-        <div class="small">Não possui conta? <a href="registro.php">Cadastrar</a></div>
+        <div class="small">Não possui conta? <a href="/registro.php">Cadastrar</a></div>
       </div>
     </div>
   </div>
-  <script src="js/app.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 </html>
