@@ -1,16 +1,16 @@
 
-<?php require __DIR__.'/php/auth.php'; require_admin(); require __DIR__.'/php/conexao.php'; ?>
+<?php require __DIR__.'/php/auth.php'; require_admin(); require __DIR__.'php/conexao.php'; ?>
 <!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Relatórios</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head><body>
 <div class="container-app">
-  <?php include __DIR__.'/php/sidebar_admin.php'; ?>
+  <?php include __DIR__.'php/sidebar_admin.php'; ?>
   <div class="main">
-    <?php include __DIR__.'/php/header.php'; ?>
+    <?php include __DIR__.'php/header.php'; ?>
     <div class="content">
       <div class="d-flex align-items-center justify-content-between mb-3">
         <h4>Relatórios Mensais</h4>

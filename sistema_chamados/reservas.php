@@ -1,15 +1,15 @@
 
-<?php require __DIR__.'/php/auth.php'; require_login(); require __DIR__.'/php/conexao.php'; ?>
+<?php require __DIR__.'/php/auth.php'; require_login(); require __DIR__.'php/conexao.php'; ?>
 <!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agendar Sala</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head><body>
 <div class="container-app">
-  <?php include __DIR__.'/php/sidebar_user.php'; ?>
+  <?php include __DIR__.'php/sidebar_user.php'; ?>
   <div class="main">
-    <?php include __DIR__.'/php/header.php'; ?>
+    <?php include __DIR__.'php/header.php'; ?>
     <div class="content">
       <h4 class="mb-3">Agendamento de Sala (8h–18h)</h4>
       <?php if(isset($_GET['ok'])): ?><div class="alert alert-success">Reserva enviada!</div><?php endif; ?>
@@ -41,7 +41,7 @@
       <div id="confirmacaoReserva" class="card p-3 d-none">
         <h5>Confirmação</h5>
         <p class="small">Revise os dados e clique em "Enviar reserva".</p>
-        <form method="post" action="/php/reservas.php" onsubmit="
+        <form method="post" action="php/reservas.php" onsubmit="
           document.getElementById('dataHidden').value = document.getElementById('dataReserva').value;
           document.getElementById('iniHidden').value = document.getElementById('horaInicio').value;
           document.getElementById('fimHidden').value = document.getElementById('horaFim').value;
@@ -54,7 +54,7 @@
           <input type="checkbox" id="tecHidden" name="necessita_tecnico" class="d-none">
           <div class="d-flex gap-2 mt-2">
             <button class="btn btn-success">Enviar reserva</button>
-            <a href="/reservas.php" class="btn btn-outline-secondary">Alterar</a>
+            <a href="reservas.php" class="btn btn-outline-secondary">Alterar</a>
           </div>
         </form>
       </div>
@@ -62,5 +62,5 @@
     </div>
   </div>
 </div>
-<script src="/js/app.js"></script>
+<script src="js/app.js"></script>
 </body></html>

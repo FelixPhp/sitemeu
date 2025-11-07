@@ -4,12 +4,12 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard Técnico</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head><body>
 <div class="container-app">
-  <?php include __DIR__.'/php/sidebar_admin.php'; ?>
+  <?php include __DIR__.'php/sidebar_admin.php'; ?>
   <div class="main">
-    <?php include __DIR__.'/php/header.php'; ?>
+    <?php include __DIR__.'php/header.php'; ?>
     <div class="content">
       <div class="d-flex align-items-center justify-content-between mb-3">
         <h4>Chamados</h4>
@@ -45,7 +45,7 @@
                 <td><?php echo htmlspecialchars($r['setor']); ?></td>
                 <td><?php echo htmlspecialchars($r['status']); ?></td>
                 <td><?php echo htmlspecialchars($r['prioridade']); ?></td>
-                <td><a class="btn btn-sm btn-primary" href="/tecnico_responder.php?id=<?php echo $r['id']; ?>">Responder</a></td>
+                <td><a class="btn btn-sm btn-primary" href="tecnico_responder.php?id=<?php echo $r['id']; ?>">Responder</a></td>
               </tr>
               <?php endforeach; ?>
             </tbody>
@@ -55,5 +55,5 @@
     </div>
   </div>
 </div>
-<script src="/js/app.js"></script>
+<script src="js/app.js"></script>
 </body></html>

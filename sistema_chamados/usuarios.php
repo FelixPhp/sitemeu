@@ -1,15 +1,15 @@
 
-<?php require __DIR__.'/php/auth.php'; require_admin(); require __DIR__.'/php/conexao.php'; ?>
+<?php require __DIR__.'/php/auth.php'; require_admin(); require __DIR__.'php/conexao.php'; ?>
 <!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Usuários</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head><body>
 <div class="container-app">
-  <?php include __DIR__.'/php/sidebar_admin.php'; ?>
+  <?php include __DIR__.'php/sidebar_admin.php'; ?>
   <div class="main">
-    <?php include __DIR__.'/php/header.php'; ?>
+    <?php include __DIR__.'php/header.php'; ?>
     <div class="content">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4>Gerenciamento de Usuários</h4>
@@ -31,8 +31,8 @@
                 <td><?php echo htmlspecialchars($u['setor']); ?></td>
                 <td><span class="badge bg-secondary"><?php echo $u['tipo_usuario']; ?></span></td>
                 <td>
-                  <a class="btn btn-sm btn-outline-primary" href="/usuarios.php?edit=<?php echo $u['id']; ?>">Editar</a>
-                  <a class="btn btn-sm btn-outline-danger" href="/php/usuarios.php?action=excluir&id=<?php echo $u['id']; ?>" onclick="return confirm('Excluir usuário?')">Excluir</a>
+                  <a class="btn btn-sm btn-outline-primary" href="usuarios.php?edit=<?php echo $u['id']; ?>">Editar</a>
+                  <a class="btn btn-sm btn-outline-danger" href="php/usuarios.php?action=excluir&id=<?php echo $u['id']; ?>" onclick="return confirm('Excluir usuário?')">Excluir</a>
                 </td>
               </tr>
               <?php endforeach; ?>
@@ -44,7 +44,7 @@
       <!-- Modal -->
       <div class="modal fade" id="modalUser" tabindex="-1">
         <div class="modal-dialog">
-          <form class="modal-content" method="post" action="/php/usuarios.php">
+          <form class="modal-content" method="post" action="php/usuarios.php">
             <input type="hidden" name="action" value="criar">
             <div class="modal-header"><h5 class="modal-title">Novo Usuário</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
             <div class="modal-body">
@@ -94,5 +94,5 @@
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/app.js"></script>
+<script src="js/app.js"></script>
 </body></html>

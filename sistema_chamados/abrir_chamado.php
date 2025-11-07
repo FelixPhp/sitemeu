@@ -4,17 +4,17 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abrir Chamado</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head><body>
 <div class="container-app">
-  <?php include __DIR__.'/php/sidebar_user.php'; ?>
+  <?php include __DIR__.'php/sidebar_user.php'; ?>
   <div class="main">
-    <?php include __DIR__.'/php/header.php'; ?>
+    <?php include __DIR__.'php/header.php'; ?>
     <div class="content">
       <h4 class="mb-3">Abertura de Chamado</h4>
       <?php if(isset($_GET['ok'])): ?><div class="alert alert-success">Chamado aberto com sucesso!</div><?php endif; ?>
       <div class="card p-3">
-        <form method="post" action="/php/chamados.php">
+        <form method="post" action="php/chamados.php">
           <input type="hidden" name="action" value="criar">
           <div class="row g-3">
             <div class="col-md-4">
@@ -36,7 +36,7 @@
           </div>
           <div class="mt-3 d-flex gap-2">
             <button class="btn btn-primary">Enviar</button>
-            <a href="/dashboard_usuario.php" class="btn btn-outline-secondary">Cancelar</a>
+            <a href="dashboard_usuario.php" class="btn btn-outline-secondary">Cancelar</a>
           </div>
         </form>
       </div>
