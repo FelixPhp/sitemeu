@@ -25,7 +25,8 @@
           <div class="mb-3"><label class="form-label">Senha</label><input name="senha" type="password" class="form-control" required></div>
           <button class="btn btn-primary w-100">Entrar</button>
         </form>
-        <div class="small">Não possui conta? <a href="/registro.php">Cadastrar</a></div>
+        
+        <!--<div class="small">Não possui conta? <a href="/registro.php">Cadastrar</a></div> -->
       </div>
     </div>
   </div>
