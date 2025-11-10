@@ -23,9 +23,14 @@
         <form action="/php/login.php" method="post" class="mb-3">
           <div class="mb-2"><label class="form-label">Email</label><input name="email" type="email" class="form-control" required></div>
           <div class="mb-3"><label class="form-label">Senha</label><input name="senha" type="password" class="form-control" required></div>
+          <div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" name="manter_logado" id="manter_logado" value="1">
+    <label class="form-check-label" for="manter_logado">Manter-me logado</label>
+  </div>
           <button class="btn btn-primary w-100">Entrar</button>
-        </form>
         
+        </form>
+
         <!--<div class="small">Não possui conta? <a href="/registro.php">Cadastrar</a></div> -->
       </div>
     </div>
