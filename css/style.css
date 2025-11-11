@@ -17,8 +17,8 @@ html, body {
 
 /* === CONTAINER PRINCIPAL === */
 .container-app {
-  width: 600px;
-  height: 100px;
+  width: 1028px;
+  height: 720px;
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
