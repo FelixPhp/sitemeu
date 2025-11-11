@@ -17,7 +17,7 @@ html, body {
 
 /* === CONTAINER PRINCIPAL === */
 .container-app {
-  width: 900px;
+  width: 500px;
   height: 100px;
   background: #ffffff;
   border-radius: 16px;
