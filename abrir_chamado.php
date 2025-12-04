@@ -14,7 +14,7 @@
       <h4 class="mb-3">Abertura de Chamado</h4>
       <?php if(isset($_GET['ok'])): ?><div class="alert alert-success">Chamado aberto com sucesso!</div><?php endif; ?>
       <div class="card p-3">
-        <form method="post" action="/php/gerador.php">
+        <form method="post" action="/php/chamados.php">
           <input type="hidden" name="action" value="criar">
           <div class="row g-3">
             <div class="col-md-4">
