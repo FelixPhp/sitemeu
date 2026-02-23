@@ -17,9 +17,9 @@ if(mysqli_num_rows($result) > 0){
     $log = "INSERT INTO logs (usuario, ip) VALUES ('$usuario', '$ip')";
     mysqli_query($conn, $log);
 
-    header("Location: ../painel.php");
+    header("Location: painel.php");
 
 }else{
-    header("Location: ../index.php?erro=1");
+    header("Location: index.php?erro=1");
 }
 ?>
