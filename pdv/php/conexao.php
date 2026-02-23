@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$user = "root";
+$user = "u209199010_administrador";
 $pass = "";
 $db = "u209199010_pvd";
 
