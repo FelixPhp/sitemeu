@@ -1,0 +1,104 @@
+
+
+#############################################
+# AGUARDE REINICIAR E COLE O RESTO
+#############################################
+
+#############################################
+# BRIDGE
+#############################################
+/interface bridge
+add name=bridge-lan vlan-filtering=yes arp=reply-only
+
+#############################################
+# PORTA TRUNK (ARUBA)
+/interface bridge port
+add bridge=bridge-lan interface=ether2
+
+#############################################
+# VLANS
+#############################################
+/interface vlan
+add name=vlan10 interface=bridge-lan vlan-id=10
+add name=vlan20 interface=bridge-lan vlan-id=20
+add name=vlan30 interface=bridge-lan vlan-id=30
+add name=vlan40 interface=bridge-lan vlan-id=40
+add name=vlan50 interface=bridge-lan vlan-id=50
+
+#############################################
+# VLAN NA BRIDGE
+#############################################
+/interface bridge vlan
+add bridge=bridge-lan vlan-ids=10 tagged=bridge-lan,ether2
+add bridge=bridge-lan vlan-ids=20 tagged=bridge-lan,ether2
+add bridge=bridge-lan vlan-ids=30 tagged=bridge-lan,ether2
+add bridge=bridge-lan vlan-ids=40 tagged=bridge-lan,ether2
+add bridge=bridge-lan vlan-ids=50 tagged=bridge-lan,ether2
+
+#############################################
+# IP ADDRESS
+#############################################
+/ip address
+add address=10.1.1.1/24 interface=vlan10 comment="SERVIDORES"
+add address=10.1.2.1/24 interface=vlan20 comment="VMS"
+add address=10.1.3.1/24 interface=vlan30 comment="CFTV"
+add address=10.1.4.1/24 interface=vlan40 comment="IMPRESSORAS"
+add address=10.1.5.1/24 interface=vlan50 comment="USUARIOS"
+
+#############################################
+# DHCP CFTV
+#############################################
+/ip pool
+add name=pool_cftv ranges=10.1.3.10-10.1.3.200
+
+/ip dhcp-server
+add name=dhcp_cftv interface=vlan30 address-pool=pool_cftv disabled=no
+
+/ip dhcp-server network
+add address=10.1.3.0/24 gateway=10.1.3.1
+
+#############################################
+# DHCP USUÁRIOS (COM CONTROLE DE MAC)
+#############################################
+/ip pool
+add name=pool_users ranges=10.1.5.10-10.1.5.200
+
+/ip dhcp-server
+add name=dhcp_users interface=vlan50 address-pool=pool_users lease-time=1h add-arp=yes disabled=no
+
+/ip dhcp-server network
+add address=10.1.5.0/24 gateway=10.1.5.1
+
+#############################################
+# FIREWALL (ORDEM CORRETA)
+#############################################
+/ip firewall filter
+
+# conexões já estabelecidas
+add chain=forward connection-state=established,related action=accept
+
+# internet
+add chain=forward out-interface=ether1 action=accept
+
+# usuários -> servidores
+add chain=forward src-address=10.1.5.0/24 dst-address=10.1.1.0/24 action=accept
+add chain=forward src-address=10.1.5.0/24 dst-address=10.1.2.0/24 action=accept
+
+# impressoras -> servidores
+add chain=forward src-address=10.1.4.0/24 dst-address=10.1.1.0/24 action=accept
+add chain=forward src-address=10.1.4.0/24 dst-address=10.1.2.0/24 action=accept
+
+# exceção cftv
+add chain=forward src-address=10.1.5.50-10.1.5.60 dst-address=10.1.3.0/24 action=accept
+
+# bloqueia cftv
+add chain=forward src-address=10.1.3.0/24 action=drop
+
+# bloqueio geral
+add chain=forward action=drop
+
+#############################################
+# NAT (INTERNET)
+#############################################
+/ip firewall nat
+add chain=srcnat out-interface=ether1 action=masquerade

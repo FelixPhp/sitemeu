@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor de Servidores</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>MONITORING SYSTEM</h2>
+        <ul>
+            <li>Dashboard</li>
+            <li>Servidores</li>
+            <li>Alertas</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>Status dos Servidores</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>CPU</h3>
+                <canvas id="cpuChart"></canvas>
+            </div>
+
+            <div class="card">
+                <h3>Memória RAM</h3>
+                <canvas id="ramChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
