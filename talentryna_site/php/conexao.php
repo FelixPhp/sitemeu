@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'u209199010_talento';
+$db   = 'u209199010_talentryna';
 $user = 'u209199010_felixadmin01';
 $pass = '_Artlifedev@20i8';
 $charset = 'utf8mb4';
